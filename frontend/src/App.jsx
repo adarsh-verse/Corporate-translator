@@ -17,7 +17,7 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/translate",
+        `${import.meta.env.VITE_API_URL}/translate`,
         {
           text: text,
           tone: tone,
@@ -31,7 +31,7 @@ function App() {
     } finally {
       setLoading(false);
     }
-    // setText("")
+    setText("")
   };
 
   return (
